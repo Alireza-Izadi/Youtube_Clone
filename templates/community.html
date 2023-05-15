@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Youtube</title>
-    <link rel="icon" type="images/png" href="images/youtube-icon.png" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="icon" type="images/png" href="{% static 'images/youtube-icon.png' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"
@@ -27,7 +28,7 @@
 
       <div class="header__left">
         <i id="menu" class="material-icons">menu</i>
-        <a href="index.html">
+        <a href="{% url 'home' %}">
           <img
             src="https://www.xda-developers.com/files/2017/08/After-12-Years-Google-Gives-YouTube-a-New-Logo-1900x700_c.png"
             alt=""
@@ -62,7 +63,7 @@
       <div class="sidebar">
         <div class="sidebar__categories">
           <!-- Single Category -->
-          <a href="index.html">
+          <a href="{% url 'home' %}">
             <div class="sidebar__category">
               <i class="material-icons">home</i>
               <span>Home</span>
@@ -120,11 +121,11 @@
       <!-- Video Section Starts -->
       <div class="videos">
         <div class="channel-art">
-          <img src="images/channel-art.jpg" alt="" />
+          <img src="{% static 'images/channel-art.jpg' %}" alt="" />
         </div>
         <div class="channel-header flex">
           <div class="channel-img-title flex">
-            <img class="img" src="images/logo.jpg" alt="" />
+            <img class="img" src="{% static 'images/logo.jpg' %}" alt="" />
             <div class="channel-image-texts">
               <h4>Alireza</h4>
               <span>2.46K subscribers</span>
@@ -136,11 +137,11 @@
           </div>
         </div>
         <div class="channel-header-links flex">
-          <a href="channel.html" class="display-this">Home</a>
-          <a href="channel-videos.html" class="display-this">Videos</a>
-          <a href="community.html" class="dont-display-thdis">Community</a>
-          <a href="index.html" class="dont-display-this">Membership</a>
-          <a href="index.html" class="dont-display-this">Channels</a>
+          <a href="{% url 'channel' %}" class="display-this">Home</a>
+          <a href="{% url 'channel_videos' %}" class="display-this">Videos</a>
+          <a href="{% url 'community' %}" class="dont-display-thdis">Community</a>
+          <a href="{% url 'home' %}" class="dont-display-this">Membership</a>
+          <a href="{% url 'home' %}" class="dont-display-this">Channels</a>
           <a href="about.html" class="display-this">About</a>
           <a href="" class="dont-display-this"
             ><i class="material-icons">search</i></a
@@ -155,7 +156,7 @@
             <div class="content-div">
               <div class="header-comm">
                 <div class="channel-details">
-                  <img src="images/logo.jpg" class="channel-img-com" alt="" />
+                  <img src="{% static 'images/logo.jpg' %}" class="channel-img-com" alt="" />
                   <h5>Alireza</h5>
                   <span>10 Days Ago</span>
                 </div>
@@ -188,7 +189,7 @@
                   have JUST opened the email list so you can be the first to get
                   notified. Sign up here!
                 </h3>
-                <img src="images/1.jpg" alt="" />
+                <img src="{% static 'images/1.jpg' %}" alt="" />
               </div>
               <div class="icon-section">
                 <div class="single-icon">
@@ -220,6 +221,6 @@
       </div>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
   </body>
 </html>

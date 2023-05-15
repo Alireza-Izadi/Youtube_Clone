@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Youtube</title>
     <link rel="icon" type="images/png" href="images/youtube-icon.png" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"
@@ -24,7 +25,7 @@
 
       <div class="header__left">
         <i id="menu" class="material-icons">menu</i>
-        <a href="index.html">
+        <a href="{% url 'home' %}">
           <img
             src="https://www.xda-developers.com/files/2017/08/After-12-Years-Google-Gives-YouTube-a-New-Logo-1900x700_c.png"
             alt=""
@@ -49,7 +50,7 @@
         <i class="material-icons">videocam</i>
         <i class="material-icons">apps</i>
         <i class="material-icons display-this">notifications</i>
-        <a href="channel.html"
+        <a href="{% url 'channel' %}"
           ><i id="drop-down" class="material-icons display-this"
             >account_circle</i
           ></a
@@ -63,7 +64,7 @@
       <div class="sidebar">
         <div class="sidebar__categories">
           <!-- Single Category -->
-          <a href="index.html">
+          <a href="{% url 'home' %}">
             <div class="sidebar__category">
               <i class="material-icons">home</i>
               <span>Home</span>
@@ -97,7 +98,7 @@
           </div>
 
           <!-- Single Category -->
-          <a href="channel-videos.html">
+          <a href="{% url 'channel_videos' %}">
             <div class="sidebar__category">
               <i class="material-icons">play_arrow</i>
               <span>Your Videos</span>
@@ -146,11 +147,11 @@
           <!-- Single Video Starts Here -->
           <div class="video">
             <div class="video__thumbnail">
-              <img src="images/1.jpg" alt="" />
+              <img src="{% static 'images/1.jpg'%}" alt="" />
             </div>
             <div class="video__details">
               <div class="author">
-                <img src="images/logo.jpg" alt="" />
+                <img src="{% static 'images/logo.jpg' %}" alt="" />
               </div>
               <div class="title">
                 <h3>Youtube Clone Using HTML, CSS and JS</h3>
@@ -165,11 +166,11 @@
           <!-- Single Video Starts Here -->
           <div class="video">
             <div class="video__thumbnail">
-              <img src="images/1.jpg" alt="" />
+              <img src="{% static 'images/1.jpg' %}" alt="" />
             </div>
             <div class="video__details">
               <div class="author">
-                <img src="images/logo.jpg" alt="" />
+                <img src="{% static 'images/logo.jpg' %}" alt="" />
               </div>
               <div class="title">
                 <h3>Youtube Clone Using HTML, CSS and JS</h3>
@@ -184,11 +185,11 @@
           <!-- Single Video Starts Here -->
           <div class="video">
             <div class="video__thumbnail">
-              <img src="images/1.jpg" alt="" />
+              <img src="{% static 'images/1.jpg' %}" alt="" />
             </div>
             <div class="video__details">
               <div class="author">
-                <img src="images/logo.jpg" alt="" />
+                <img src="{% static 'images/logo.jpg' %}" alt="" />
               </div>
               <div class="title">
                 <h3>Youtube Clone Using HTML, CSS and JS</h3>
@@ -203,11 +204,11 @@
           <!-- Single Video Starts Here -->
           <div class="video">
             <div class="video__thumbnail">
-              <img src="images/1.jpg" alt="" />
+              <img src="{% static 'images/1.jpg' %}" alt="" />
             </div>
             <div class="video__details">
               <div class="author">
-                <img src="images/logo.jpg" alt="" />
+                <img src="{% static 'images/logo.jpg' %}" alt="" />
               </div>
               <div class="title">
                 <h3>Youtube Clone Using HTML, CSS and JS</h3>
@@ -222,11 +223,11 @@
           <!-- Single Video Starts Here -->
           <div class="video">
             <div class="video__thumbnail">
-              <img src="images/1.jpg" alt="" />
+              <img src="{% static 'images/1.jpg' %}" alt="" />
             </div>
             <div class="video__details">
               <div class="author">
-                <img src="images/logo.jpg" alt="" />
+                <img src="{% static 'images/logo.jpg' %}" alt="" />
               </div>
               <div class="title">
                 <h3>Youtube Clone Using HTML, CSS and JS</h3>
@@ -240,11 +241,11 @@
           <!-- Single Video Starts Here -->
           <div class="video">
             <div class="video__thumbnail">
-              <img src="images/1.jpg" alt="" />
+              <img src="{% static 'images/1.jpg' %}" alt="" />
             </div>
             <div class="video__details">
               <div class="author">
-                <img src="images/logo.jpg" alt="" />
+                <img src="{% static 'images/logo.jpg' %}" alt="" />
               </div>
               <div class="title">
                 <h3>Youtube Clone Using HTML, CSS and JS</h3>
@@ -259,6 +260,6 @@
       </div>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
   </body>
 </html>
