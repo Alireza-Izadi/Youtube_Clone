@@ -1,10 +1,14 @@
 from django.shortcuts import render
-
+from core.models import Video
 
 
 # Create your views here.
 def home(request):
-    return render(request, "index.html")
+    videos = Video.objects.filter(visibility="public")
+    context = {
+        "videos": videos,
+    }
+    return render(request, "index.html", context)
 
 def channel(request):
     return render(request, "channel.html")
