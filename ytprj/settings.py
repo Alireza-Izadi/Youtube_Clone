@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -39,6 +40,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # My Apps
     "core",
+    "userauths",
+
+    #Third Party App
+    "import_export",
+    
 ]
 
 MIDDLEWARE = [
@@ -126,7 +132,20 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 MEDIA_URL = "/media/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+AUTH_USER_MODEL = "userauths.User"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Youtube Admin",
+     "site_header": "Youtube",
+     "site_brand": "Youtube",
+     "site_logo": "images/youtube-logo.png",
+     "site_icon": "./../static/images/youtube-icon.png",
+     "welcome_sign": "Welcome to the Youtube",
+     "copyright": "Alireza Izadi",
+
+}

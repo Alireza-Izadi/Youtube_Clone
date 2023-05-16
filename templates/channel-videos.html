@@ -136,10 +136,10 @@
         <div class="channel-header-links flex">
           <a href="{% url 'channel' %}" class="display-this">Home</a>
           <a href="{% url 'channel_videos' %}" class="display-this">Videos</a>
-          <a href="community.html" class="dont-display-thdis">Community</a>
+          <a href="{% url 'community' %}" class="dont-display-thdis">Community</a>
           <a href="{% url 'home' %}" class="dont-display-this">Membership</a>
           <a href="{% url 'home' %}" class="dont-display-this">Channels</a>
-          <a href="about.html" class="display-this">About</a>
+          <a href="{%url 'about' %}" class="display-this">About</a>
           <a href=""><i class="material-icons">search</i></a>
         </div>
 
