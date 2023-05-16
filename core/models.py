@@ -20,7 +20,7 @@ class Video(models.Model):
     description = models.TextField(null=True, blank=True)
     tag = TaggableManager()
     date = models.DateTimeField(auto_now_add=True)
-    visiblity = models.CharField(choices=VISIBILITY, max_length=100, default="public")
+    visibility = models.CharField(choices=VISIBILITY, max_length=100, default="public")
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     views = models.PositiveIntegerField(default=0)
 
