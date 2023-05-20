@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youtube</title>
-    <link rel="icon" type="images/png" href="images/youtube-icon.png">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/single.css" type="text/css">
+    <link rel="icon" type="images/png" href="{% static 'images/youtube-icon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/single.css' %}" type="text/css">
 
     <!-- CDNS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous" />
@@ -19,8 +20,8 @@
         <!-- Header menu Start -->
 
         <div class="header__left">
-            <i id="menu" class="material-icons">menu</i>
-            <img src="https://www.xda-developers.com/files/2017/08/After-12-Years-Google-Gives-YouTube-a-New-Logo-1900x700_c.png" alt="">
+            <a href="{% url 'home' %}"><i id="menu" class="material-icons">menu</i> </a>
+            <a href="{% url 'home' %}"><img src="https://www.xda-developers.com/files/2017/08/After-12-Years-Google-Gives-YouTube-a-New-Logo-1900x700_c.png" alt=""></a>
         </div>
         <!-- Header menu end -->
 
@@ -51,12 +52,12 @@
             <div class="left">
                 <div class="left_content">
                     <video controls>
-                        <source src="video/Desphixs Logo Intro.mp4" type="video/mp4" poster="images/1.jpg">
+                        <source src="{{ video.video.url }}" type="video/mp4" poster="images/1.jpg">
                     </video>
 
                     <div class="tag">
                         <label for="" class="tags">#alireza #frontend #css</label>
-                        <p>Youtube Clone using HTML, CSSS and JS</p>
+                        <p>{{ video.title }}</p>
                     </div>
 
                     <div class="view flex2 border_bottom">
@@ -103,7 +104,7 @@
 
                     <div class="details flex border_bottom">
                         <div class="img">
-                            <img src="images/logo.jpg" alt="">
+                            <img src="{% static 'images/logo.jpg' %}" alt="">
                         </div>
                         <div class="heading">
                             <h4>Alireza <small><i class="fa fa-check-circle"></i></small> </h4>
@@ -128,7 +129,7 @@
 
                     <div class="details comment_self flex">
                         <div class="img">
-                            <img src="images/logo.jpg" alt="">
+                            <img src="{% static 'images/logo.jpg' %}" alt="">
                         </div>
                         <div class="heading">
                             <input type="text" placeholder="Add a comment...">
@@ -138,7 +139,7 @@
                     <div class="details_Comment">
                         <div class="details flex">
                             <div class="img">
-                                <img  src="images/logo.jpg" alt="">
+                                <img  src="{% static 'images/logo.jpg' %}" alt="">
                             </div>
                             <div class="heading">
                                 <h4>Jenny Doe <span>17 Months ago</span></h4>
@@ -166,7 +167,7 @@
                         <label for="" class="tags"><i class="fa fa-caret-up"></i>Hide Reply</label>
                         <div class="replay-details flex">
                             <div class="img">
-                                <img src="images/logo.jpg"  alt="">
+                                <img src="{% static 'images/logo.jpg' %}"  alt="">
                             </div>
                             <div class="text">
                                 <h4><label for="">Alireza</label> <span>16 Months ago</span> </h4>
@@ -189,7 +190,7 @@
 
                     <div class="video_items vide_sidebar flex">
                         <a href="">
-                            <img src="images/1.jpg" alt="">
+                            <img src="{% static 'images/1.jpg' %}" alt="">
                         </a>
                         <div class="details">
                             <p>Youtube CLone using HTML, CSS and JS</p>
@@ -200,7 +201,7 @@
 
                     <div class="video_items vide_sidebar flex">
                         <a href="">
-                            <img src="images/1.jpg" alt="">
+                            <img src="{% static 'images/1.jpg' %}" alt="">
                         </a>
                         <div class="details">
                             <p>Youtube CLone using HTML, CSS and JS</p>
@@ -211,7 +212,7 @@
 
                     <div class="video_items vide_sidebar flex">
                         <a href="">
-                            <img src="images/1.jpg" alt="">
+                            <img src="{% static 'images/1.jpg' %}" alt="">
                         </a>
                         <div class="details">
                             <p>Youtube CLone using HTML, CSS and JS</p>
@@ -228,6 +229,6 @@
     </main>
     
 
-<script src="js/main.js"></script>
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

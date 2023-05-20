@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.views.generic import DetailView
 from core.models import Video
-
+from .models import Video
 
 # Create your views here.
 def home(request):
@@ -21,3 +22,7 @@ def community(request):
 
 def about(request):
     return render(request, "about.html")
+
+class CoreDetailView(DetailView):
+    model = Video
+    template_name = "video_detail.html"

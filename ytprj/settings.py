@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # My Apps
-    "core",
-    "userauths",
+    "core.apps.CoreConfig",
+    "userauths.apps.UserauthsConfig",
 
     #Third Party App
     "import_export",
