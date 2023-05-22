@@ -56,7 +56,7 @@
                     </video>
 
                     <div class="tag">
-                        <label for="" class="tags">#alireza #frontend #css</label>
+                        <label for="" class="tags"></label>
                         <p>{{ video.title }}</p>
                     </div>
 
@@ -122,62 +122,69 @@
 
                     <div class="comment">
                         <div class="comment-heading flex">
-                            <h4>2 Comments</h4>
+                            <h4><b>{{ comment.count }} Comments</b></h4>
                             <h4><i class="fa fa-list-ul"></i> <label>Sort By</label> </h4>
                         </div>
                     </div>
 
                     <div class="details comment_self flex">
                         <div class="img">
-                            <img src="{% static 'images/logo.jpg' %}" alt="">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png" alt="">
                         </div>
-                        <div class="heading">
-                            <input type="text" placeholder="Add a comment...">
-                        </div>
+                        <form action="" method="post" style="width: 100%;">
+                            <div class="heading flex">
+                                {% csrf_token %}
+                                <input type="text" placeholder="Add a comment...">
+                                <button type="submit"><i class="material-icons">send</i></button>
+                            </div>
+                        </form>
                     </div>
-
+                    {% for c in comment %}
                     <div class="details_Comment">
                         <div class="details flex">
                             <div class="img">
-                                <img  src="{% static 'images/logo.jpg' %}" alt="">
+                                <img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png" alt="">
                             </div>
                             <div class="heading">
-                                <h4>Jenny Doe <span>17 Months ago</span></h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, quod!</p>
+                                <h4>{{ c.user.username| title }} &nbsp; • <span>{{ c.date|timesince }} ago</span></h4>
+                                <p>{{ c.comment }}</p>
                                 <div class="comment-like flex">
                                     <div class="icon">
                                         <i class="fa fa-thumbs-up"></i>
-                                        <label for="">5</label>
+                                        <label for=""><small>5</small></label>
                                     </div>
 
                                     <div class="icon">
                                         <i class="fa fa-thumbs-down"></i>
-                                        <label for="">Dislike</label>
+                                        <label for=""><small>Dislike</small></label>
                                     </div>
 
                                     <div class="icon">
-                                        <label for=""><a href="">Reply</a></label>
+                                        <label for=""><a href=""><small>Reply</small></a></label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="replay">
+                    
+                    <!-- <div class="replay">
                         <label for="" class="tags"><i class="fa fa-caret-up"></i>Hide Reply</label>
                         <div class="replay-details flex">
                             <div class="img">
-                                <img src="{% static 'images/logo.jpg' %}"  alt="">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"  alt="">
                             </div>
                             <div class="text">
                                 <h4><label for="">Alireza</label> <span>16 Months ago</span> </h4>
                                 <p>Thank you</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </div> -->
+                    <hr>
+                    {% endfor %}
 
+                </div>
+                
+            </div>
             <div class="right">
                 <div class="right_content">
                     <button class="chat">Show Chat Reply</button>
@@ -187,41 +194,18 @@
                         <label for="" class="tags-bg">Frontend</label>
                         <label for="" class="tags-bg">HTML</label>
                     </div>
-
+                    {% for s in similar_videos %}
                     <div class="video_items vide_sidebar flex">
-                        <a href="">
-                            <img src="{% static 'images/1.jpg' %}" alt="">
+                        <a href="{% url 'video_detail' s.id%}">
+                            <img src="{{ s.image.url }}" alt="">
                         </a>
                         <div class="details">
-                            <p>Youtube CLone using HTML, CSS and JS</p>
-                            <span>Alireza <i class="fa fa-check-circle"></i></span>
-                            <span>203K Views . 1 Week Ago </span>
+                            <p>{{ s.title }}</p>
+                            <span>{{ s.user.username }} <i class="fa fa-check-circle"></i></span>
+                            <span>{{ s.views}} Views . {{ s.date | timesince }} Ago </span>
                         </div>
                     </div>
-
-                    <div class="video_items vide_sidebar flex">
-                        <a href="">
-                            <img src="{% static 'images/1.jpg' %}" alt="">
-                        </a>
-                        <div class="details">
-                            <p>Youtube CLone using HTML, CSS and JS</p>
-                            <span>Alireza <i class="fa fa-check-circle"></i></span>
-                            <span>203K Views . 1 Week Ago </span>
-                        </div>
-                    </div>
-
-                    <div class="video_items vide_sidebar flex">
-                        <a href="">
-                            <img src="{% static 'images/1.jpg' %}" alt="">
-                        </a>
-                        <div class="details">
-                            <p>Youtube CLone using HTML, CSS and JS</p>
-                            <span>Alireza <i class="fa fa-check-circle"></i></span>
-                            <span>203K Views . 1 Week Ago </span>
-                        </div>
-                    </div>
-
-                    
+                    {% endfor %}
                 </div>
             </div>
 
