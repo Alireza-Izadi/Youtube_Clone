@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # My Apps
     "core.apps.CoreConfig",
     "userauths.apps.UserauthsConfig",
+    "channel.apps.ChannelConfig",
 
     #Third Party App
     "import_export",

@@ -104,11 +104,11 @@
 
                     <div class="details flex border_bottom">
                         <div class="img">
-                            <img src="{% static 'images/logo.jpg' %}" alt="">
+                            <img src="{{ video.user.channel.image.url }}" alt="">
                         </div>
                         <div class="heading">
-                            <h4>Alireza <small><i class="fa fa-check-circle"></i></small> </h4>
-                            <span>2.4K Subscribers</span>
+                            <h4>{{ video.user.channel.channel_name }}<small>{% if video.user.channel.verified %}<i class="fa fa-check-circle"></i>{% endif %}</small> </h4>
+                            <span>{{ video.user.channel.subscribers.all.count }} Subscribers</span>
 
                             <h5>Youtube Clone suing HTML, CSS, and JS and guess what it'll be responsive</h5>
                             <span> <i class="fa fa-caret-down"></i> show more</span>
