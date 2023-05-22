@@ -6,7 +6,7 @@ class VideoAdmin(ImportExportModelAdmin):
     pass
 # Register your models here.
 class CommentAdmin(ImportExportModelAdmin):
-    list_display = ["user" ,"comment", "active", "video"]
+    list_display = ["user" ,"comment", "active", "video", "date"]
 
 admin.site.register(Video, VideoAdmin)
 admin.site.register(Comment, CommentAdmin)

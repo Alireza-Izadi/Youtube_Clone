@@ -18,7 +18,7 @@ class Video(models.Model):
     image =models.ImageField(upload_to=user_directory_path, null=True, blank=True)
     title = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
-    tag = TaggableManager()
+    tags = TaggableManager()
     date = models.DateTimeField(auto_now_add=True)
     visibility = models.CharField(choices=VISIBILITY, max_length=100, default="public")
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
