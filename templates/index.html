@@ -148,7 +148,7 @@
           {% for video in videos %}
           <div class="video">
             <div class="video__thumbnail">
-              <img src="{{ video.image.url }}" alt="" />
+              <a href="{% url 'video_detail' video.pk %}"><img src="{{ video.image.url }}" alt="" /></a>
             </div>
             <div class="video__details">
               <div class="author">

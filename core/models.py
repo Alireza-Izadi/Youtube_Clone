@@ -29,4 +29,13 @@ class Video(models.Model):
 
     def get_absolute_url(self):
         return reverse("video_detail", kwargs={"pk": self.pk})
-        
+
+class Comment(models.Model):
+    comment = models.CharField(max_length=1000)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)    
+    active = models.BooleanField(default=True)
+    video = models.ForeignKey(Video, on_delete=models.CASCADE)
+    date = models.DateField(auto_now_add=True)    
+
+    def __str__(self):
+        return self.comment[:30]
